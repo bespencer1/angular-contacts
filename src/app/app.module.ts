@@ -12,6 +12,10 @@ import { BrowserStorageService } from './service/storage.service';
 //Components
 import { HomeComponent } from './home/home.component';
 
+//Utilities
+import { AppRouteReuseStrategy } from './utils/app-route-reuse-strategy';
+import { RouteReuseStrategy } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +26,12 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     NgbModule, //bootstrap module
   ],
-  providers: [LoggerService, BrowserStorageService],
+  providers: [LoggerService, 
+    BrowserStorageService,
+    {
+    provide: RouteReuseStrategy,
+    useClass: AppRouteReuseStrategy,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
