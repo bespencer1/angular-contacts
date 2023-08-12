@@ -3,16 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+//Services
+import { LoggerService } from './service/logger.service';
+import { BrowserStorageService } from './service/storage.service';
+
+//Components
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule, //bootstrap module
   ],
-  providers: [],
+  providers: [LoggerService, BrowserStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

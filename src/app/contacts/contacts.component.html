@@ -1,0 +1,15 @@
+<p>contacts works!</p>
+<button routerLink="/contacts/add">Add Contact</button>
+<hr />
+<table>
+    <thead>
+        <td>Contacts</td>
+        <td>&nbsp;</td>
+    </thead>
+    <tr *ngFor="let contact of contacts">
+        <td (click)="onSelect(contact)">{{contact.name}}</td>
+        <td><button routerLink="/contacts/edit/{{contact.id}}">Edit</button></td>
+    </tr>
+</table>
+<br/>
+<app-contact-detail-view [contact]="selectedContact"></app-contact-detail-view>
