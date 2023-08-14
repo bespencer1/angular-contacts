@@ -1,6 +1,29 @@
-<nav>
-    <a routerLink="/">Home</a><br/>
-    <a routerLink="/contacts">Contacts</a>
-</nav>
-<hr/>
-<router-outlet></router-outlet>
+<!--header-->
+<header class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <div class="col-md-3 mb-2 mb-md-0">
+        <a routerLink="/" class="link-body-emphasis text-decoration-none"><span class="fs-4">Angular Contacts</span></a>
+    </div>
+    <nav class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <a routerLink="/" class="nav-link px-2">Home</a><br/>
+        <a routerLink="/contacts" class="nav-link px-2">Contacts</a>
+    </nav>  
+    <div class="col-md-3 text-end">
+    </div>
+</header>
+
+<!--main body-->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+<!--footer-->
+<footer class="container d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+        <a routerLink="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2023 Brian Spencer</span>
+    </div>  
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    </ul>
+</footer>
